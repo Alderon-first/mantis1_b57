@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from fixture.project import ProjectHelper
 from fixture.sesion import SessionHelper
+from fixture.soap import SoapHepler
 
 
 class Application:
@@ -22,6 +23,7 @@ class Application:
         self.config = config
         self.base_url = config["web"]["baseUrl"]
         self.project = ProjectHelper(self)
+        self.soap = SoapHepler(self)
 
     def is_valid(self):
         try:
